@@ -9,6 +9,6 @@ import org.springframework.web.bind.annotation.RestController;
 public class GreetingController {
     @GetMapping
     public String greet() {
-        return "Hello, world! I'm a microservice!";
+        return "Hello, world! I'm a microservice, slightly changed! Not dependencies though!";
     }
 }
