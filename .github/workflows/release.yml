@@ -7,7 +7,7 @@ on:
 
 env:
   REGISTRY: ghcr.io
-  IMAGE_NAME: java-pipeline-demo
+  IMAGE_NAME: 435vic/java-pipeline-demo
 
 jobs:
   publish:
