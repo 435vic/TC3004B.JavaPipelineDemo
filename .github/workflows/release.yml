@@ -10,8 +10,15 @@ env:
   IMAGE_NAME: java-pipeline-demo
 
 jobs:
-  build:
-    name: Build and verify code with Maven
+  publish:
+    name: Publish code
+
+    permissions:
+      contents: read
+      packages: write
+      attestations: write
+      id-token: write
+
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -28,19 +35,6 @@ jobs:
         with:
           name: package
           path: staging
-  publish:
-    needs: build
-    name: Publish code
-
-    permissions:
-      contents: read
-      packages: write
-      attestations: write
-      id-token: write
-
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
       - name: Download build
         uses: actions/download-artifact@v4
         with:
